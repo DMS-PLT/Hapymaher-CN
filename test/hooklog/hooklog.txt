@@ -1,0 +1,7 @@
+# hooklog 启动 2026-10-06 02:06:58
+hook	GDI32.dll	CreateFontA	patched
+hook	GDI32.dll	GetTextMetricsA	patched
+hook	GDI32.dll	GetTextMetricsA	patched
+info	modules patched, gdi32=0x76900000, CreateFontA=0x7690B530
+font	h=-20	w=0	charset=128	quality=0	weight=400	face=MS Gothic
+metrics	height=20	ascent=17	descent=3	avechar=10	face=MS Gothic

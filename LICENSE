@@ -1,0 +1,37 @@
+MIT License
+
+Copyright (c) 2026 p端木森q
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+## 关于译文（2文本汉化输出/）
+
+MIT 许可仅适用于**代码**。汉化译文是原作的衍生作品：
+
+- 允许：学习、修改、在自己的汉化中引用（请注明来源）
+- 禁止：商用、售卖、整合进游戏本体分发
+
+游戏原作《ハピメア》《ハピメア Fragmentation Dream》版权归 Purple software 所有。
+
+## 关于随包字体
+
+发布包内附的「全字库正楷体（TW-Kai）」采用台湾政府资料开放授权条款第 1 版，
+可免费使用、重制、散布，使用时需注明出处：<https://www.cns11643.gov.tw/>

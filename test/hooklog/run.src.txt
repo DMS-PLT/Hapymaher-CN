@@ -1,0 +1,13 @@
+@echo off
+chcp 936 >nul
+echo ==================================================
+echo  启动 ハピメア 并记录引擎的字体/字形请求
+echo.
+echo  游戏里随便走几步：标题画面 → 开新游戏 → 看几句正文
+echo  然后正常退出游戏，日志自动保存
+echo ==================================================
+echo.
+"C:\Users\DMS\Desktop\Hapymaher\test\hooklog\launch.exe" "C:\Users\DMS\Desktop\Hapymaher\ハピメア フルHD版\cmvs32.exe"
+echo.
+echo 日志: C:\Users\DMS\Desktop\Hapymaher\ハピメア フルHD版\hooklog.txt
+pause

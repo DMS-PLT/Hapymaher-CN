@@ -1,0 +1,101 @@
+# ── 游戏本体安装目录 ──
+# 体积过大（本体 5.4G / FD 6.9G），且属未修改的原始安装数据，不纳入版本管理。
+# 注意：将来若直接改动游戏目录内的文件，这个仓库不会提供回滚保护。
+/ハピメア フルHD版/
+/ハピメア Fragmentation Dream フルHD版/
+
+# ── 游戏版权内容（开源仓库不包含）──
+# 解密脚本和原文导出都是游戏的原始数据，属于版权内容，不能随仓库分发。
+# 需要它们的人：自备游戏 → tools/export_scripts.py 重新导出。
+/ハピメア脚本/
+/ハピメア Fragmentation Dream脚本/
+/output/
+
+# ── 回收目录 ──
+/.trash/
+
+# ── 第三方工具（整棵树，体积大且不是本项目产出）──
+/1文本汉化/1-GPPGUI/
+/1文本汉化/2-Angel-Nyanya-v1.06-all/
+/1文本汉化/3-GalTransl_8.4.2_win/
+/tools/GARbro-master/
+/tools/GARbro-v1.5.44.2904/
+
+# ── 翻译工程（GalTranslPP）：中间产物与密钥 ──
+# gt_output 不在这里入库 —— 译文以 2文本汉化输出/ 为准（那里的副本才是工作副本）。
+/1文本汉化/*/GUI_Projects/*/gt_input/
+/1文本汉化/*/GUI_Projects/*/gt_output/
+/1文本汉化/*/GUI_Projects/*/transl_cache/
+/1文本汉化/*/GUI_Projects/*/transl_cache_bak/
+/1文本汉化/*/GUI_Projects/*/other_cache/
+/1文本汉化/*/GUI_Projects/*/logs/
+/1文本汉化/*/GUI_Projects/*/ProblemOverview.json
+/1文本汉化/*/GUI_Projects/*/_backup_*/
+# ⚠ Config.toml 里有明文 API key，绝不能进版本库
+/1文本汉化/*/GUI_Projects/*/Config.toml
+# 原文是 output/ 的逐字节副本，可由 export_scripts.py 重新生成
+/1文本汉化/*/原文/
+# 用其他工具生成字典时建的辅助工程，只有中间产物
+/1文本汉化/*/字典用_*/
+
+# ── UI 素材（2.5G）──
+# chip / chip_png / chip_new 全部可由 chip.cpz + tools/pb3.py 重新生成。
+/3UI源文件/*/chip/
+/3UI源文件/*/chip_png/
+/3UI源文件/*/chip_new/
+# 用户的 PS 工作目录（.psd 每次保存都变，进库会把历史撑得很大，共 1.7G）。
+# ⚠ 想给它做 git 备份的话，删掉下面这行再加进来即可。
+/3UI源文件/*/ps修改/
+
+# ── 构建中间产物（可由 tools/ 与 test/cntest/ 的脚本重新生成）──
+output/*/translated/
+test/cntest/tmp/
+test/cntest/tmp_fd/
+test/rxcmvs-build/
+test/hooklog/obj/
+test/fontprobe/obj/
+test/fontprobe/out/
+test/uiprobe/obj/
+test/skillcheck/
+test/blogimg/
+__pycache__/
+*.pyc
+
+# ── 分析 / 复核的中间产物 ──
+test/dictwork/
+test/dictwork-fd/
+test/fd_dictwork/
+test/fd_fix_backup/
+test/fdui/
+test/hapimea_recheck/
+test/problemcheck/
+test/inject_check/
+test/galtransl-recover/
+test/galtransl/
+test/transfix_2026-10-21/
+# refpatch 里已入库的 436 个历史文件不受影响；新的截图/分析产物不进库
+test/refpatch/*.png
+test/refpatch/ai2_*
+test/refpatch/sdj123/
+# 一次性分析结果（可重新跑脚本得到）
+test/fd_group_*.txt
+test/fd_inclusive_other.txt
+test/fd_unused_alerts.txt
+test/matched_titles*.txt
+
+# ── 排查过程中的临时产物 ──
+test/tmp-verify/
+test/tmp-recover/
+test/hooklog/stray/
+test/hooklog/launch_out.txt
+test/fontprobe/probe_trace.txt
+test_users/
+
+# ── 常见临时/编辑器产物 ──
+*.tmp
+*.log
+Thumbs.db
+desktop.ini
+
+# 发布包（大文件，打包产物）
+发布包/

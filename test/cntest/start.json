@@ -1,0 +1,72 @@
+﻿{
+	"Scenario": [
+		{
+			"raw": "data\\music\\",
+			"tra": "data\\music\\"
+		},
+		{
+			"raw": "data\\video\\",
+			"tra": "data\\video\\"
+		},
+		{
+			"raw": "save\\",
+			"tra": "save\\"
+		},
+		{
+			"raw": "data\\code\\",
+			"tra": "data\\code\\"
+		},
+		{
+			"raw": "data\\pack\\se.cpz",
+			"tra": "data\\pack\\se.cpz"
+		},
+		{
+			"raw": "data\\image\\chip\\",
+			"tra": "data\\image\\chip\\"
+		},
+		{
+			"raw": "data\\pack\\voice.cpz",
+			"tra": "data\\pack\\voice.cpz"
+		},
+		{
+			"raw": "data\\pack\\bg.cpz",
+			"tra": "data\\pack\\bg.cpz"
+		},
+		{
+			"raw": "data\\pack\\stand.cpz",
+			"tra": "data\\pack\\stand.cpz"
+		},
+		{
+			"raw": "data\\pack\\up.cpz",
+			"tra": "data\\pack\\up.cpz"
+		},
+		{
+			"raw": "data\\pack\\balloon.cpz",
+			"tra": "data\\pack\\balloon.cpz"
+		},
+		{
+			"raw": "data\\image\\chip\\",
+			"tra": "data\\image\\chip\\"
+		},
+		{
+			"raw": "data\\image\\event\\",
+			"tra": "data\\image\\event\\"
+		},
+		{
+			"raw": "data\\image\\event2\\",
+			"tra": "data\\image\\event2\\"
+		},
+		{
+			"raw": "data\\pack\\video.cpz",
+			"tra": "data\\pack\\video.cpz"
+		},
+		{
+			"raw": "ハピメア RE.ver",
+			"tra": "ハピメア RE.ver"
+		},
+		{
+			"raw": "hapymaher_re.ico",
+			"tra": "hapymaher_re.ico"
+		}
+	]
+}

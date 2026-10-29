@@ -1,0 +1,24 @@
+* text=auto eol=lf
+
+# Windows 批处理必须是 CRLF，否则 cmd 解析异常
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# 二进制，绝不转换
+*.exe   binary
+*.dll   binary
+*.lib   binary
+*.ico   binary
+*.ttf   binary
+*.otf   binary
+*.png   binary
+*.jpg   binary
+*.pb3   binary
+*.ps3   binary
+*.cpz   binary
+*.dat   binary
+*.7z    binary
+*.zip   binary
+
+# 译文 JSON：内容按 UTF-8 存，比较时别做换行归一化之外的转换
+*.json  text eol=lf
