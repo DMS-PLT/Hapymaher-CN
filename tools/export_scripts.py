@@ -29,7 +29,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-ROOT = Path(r"C:\Users\DMS\Desktop\Hapymaher")
+ROOT = Path(__file__).resolve().parent.parent  # 项目根（不依赖开发机路径）
 TOOL = ROOT / "tools" / "RxCMVS" / "PS3_TextEditor.exe"
 CODE_PAGE = "932"  # Shift-JIS
 

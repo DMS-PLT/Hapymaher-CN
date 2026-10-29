@@ -23,7 +23,8 @@ import subprocess
 import sys
 from pathlib import Path
 
-ROOT = Path(r"C:\Users\DMS\Desktop\Hapymaher")
+# 项目根 = 本脚本所在目录的上一级；不依赖任何开发机的绝对路径
+ROOT = Path(__file__).resolve().parent.parent
 OUT_DIR = ROOT / "2文本汉化输出"
 
 sys.path.insert(0, str(ROOT / "tools"))

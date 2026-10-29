@@ -62,7 +62,7 @@ from pathlib import Path
 
 sys.stdout.reconfigure(encoding="utf-8")
 
-ROOT = Path(r"C:\Users\DMS\Desktop\Hapymaher")
+ROOT = Path(__file__).resolve().parent.parent  # 项目根（不依赖开发机路径）
 OUTPUT = ROOT / "output"
 GALTRANSL = ROOT / "GalTransl-8.2.0"
 
@@ -323,7 +323,15 @@ def cmd_inject(game: str, manifest_path: Path, gt_output: Path,
         print(f"错误：找不到 {gt_output}", file=sys.stderr)
         return 1
 
-    src_dir = Path(manifest["source_dir"])
+    # 原文目录：优先用本项目里的 output/<game>（由 export_scripts.py 生成），
+    # 这样 manifest 里记录的开发机绝对路径不会绑死这个仓库；
+    # 找不到才回退到 manifest 里的 source_dir（兼容旧 manifest）。
+    src_dir = OUTPUT / game
+    if not src_dir.is_dir():
+        src_dir = Path(manifest["source_dir"])
+        print(f"  注意：{OUTPUT / game} 不存在，回退到 manifest 记录的 {src_dir}")
+        print("        如果也找不到，先跑 tools/export_scripts.py 导出原文")
+
     n_files = n_applied = n_kept = n_failed = n_nameinj = n_name_trans = 0
     miss, bad, unchanged_files = [], [], []
     failed_samples: list[str] = []

@@ -21,19 +21,21 @@ build_encrypted.py，那边写得够细，不再重复。
 from __future__ import annotations
 
 import json
+import os
 import shutil
 import subprocess
 import sys
 from pathlib import Path
 
-ROOT = Path(r"C:\Users\DMS\Desktop\Hapymaher")
+ROOT = Path(__file__).resolve().parents[2]  # 项目根（test/cntest 往上两级）
 TOOLS = ROOT / "tools" / "RxCMVS"
 TEXTEDIT = TOOLS / "PS3_TextEditor.exe"
 CRYPTOR = TOOLS / "PS3_Cryptor.exe"
 
 SRC_JSON = ROOT / "output" / "hapymaher" / "translated"
 SRC_PS3 = ROOT / "ハピメア脚本" / "code"
-GAME = ROOT / "ハピメア フルHD版"
+# 游戏安装目录：可用环境变量 HAPYMAHER_GAME 指定，默认放在项目根目录下
+GAME = Path(os.environ.get("HAPYMAHER_GAME") or (ROOT / "ハピメア フルHD版"))
 DST = GAME / "data" / "pack" / "script"
 TMP = Path(__file__).parent / "tmp"
 
