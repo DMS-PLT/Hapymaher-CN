@@ -62,6 +62,18 @@ Purple software《ハピメア RE.ver》与《ハピメア Fragmentation Dream R
 
 它们是构建的输入（补丁要基于原版重新写路径表和标题），也是发布包里「还原用」的来源。
 
+**第一步：解包脚本**（唯一需要手动的一步）
+
+我们的仓库不含 cpz 解包工具（`GARbro` 是 MIT，但只发布 GUI 版）。用 [GARbro](https://github.com/morkt/GARbro/releases)
+打开 `<游戏>\data\pack\script.cpz`，全选后提取到一个临时目录。解出来的 `.ps3` 是加密的，
+用脚本批量解密：
+
+```bash
+python tools/prepare_scripts.py <解包目录> --game 本体   # FD 用 --game fd
+```
+
+解密结果会放进 `ハピメア脚本/code`（FD 是 `ハピメア Fragmentation Dream脚本/code`）。
+
 ```bash
 # 1. 解密脚本 -> 导出原文
 python tools/export_scripts.py
