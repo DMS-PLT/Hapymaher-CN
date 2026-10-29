@@ -108,7 +108,15 @@ def patch_start_ps3(tmp: Path) -> bool:
         return False
     d = bytearray(plain.read_bytes())
 
-    for old, new in PATH_PAIRS:
+    # 没有界面图源时不要把 chip 路径改成散装目录 —— 那样引擎会去找
+    # 不存在的 data\pack\chip\，一进游戏就弹「ファイルをオープンできませんでした」。
+    # 保留 chip.cpz 读取，界面图维持日文原版，至少能玩。
+    pairs = PATH_PAIRS
+    if not CHIP_SRC.is_dir():
+        pairs = [p for p in PATH_PAIRS if b"chip" not in p[0]]
+        print("    没有界面图源：chip.cpz 保持原样（界面图为日文原版）")
+
+    for old, new in pairs:
         if len(new) > len(old):
             raise SystemExit(f"路径 {new!r} 比 {old!r} 长，会撑坏字符串表")
         pad = b"\x00" * (len(old) - len(new))
@@ -145,7 +153,8 @@ def patch_start_ps3(tmp: Path) -> bool:
 
 def install_chip() -> bool:
     if not CHIP_SRC.is_dir():
-        print(f"    ⚠ 找不到 {CHIP_SRC}，跳过（界面图会缺失，游戏可能崩）")
+        print(f"    ⚠ 找不到 {CHIP_SRC}，跳过 —— 界面图保持日文原版（chip.cpz 未被改动，不影响运行）")
+        print("       想要中文界面图：把 UI 素材包解压到 3UI源文件/UI界面/chip/ 后重跑")
         return False
     sys.path.insert(0, str(ROOT / "tools"))
     import pb3  # noqa: PLC0415
@@ -191,6 +200,8 @@ def main() -> int:
             return 1
     ok = fail = 0
     for i, s in enumerate(scripts, 1):
+        if s == "intcode.ps3":
+            continue          # 纯代码文件，没有文本，下面单独加密原样复制
         if build_encrypted(s, TMP):
             ok += 1
         else:
@@ -198,6 +209,16 @@ def main() -> int:
             print(f"  [失败] {s}")
         if i % 50 == 0:
             print(f"  ... {i}/{len(scripts)}")
+
+    # intcode.ps3 没有文本（Scenario 为空），重新 import 会产出坏文件 —— 直接把解密版重新加密
+    if (SRC_PS3 / "intcode.ps3").exists():
+        if run(CRYPTOR, "-mode", "encode", "-ps3", str(SRC_PS3 / "intcode.ps3"),
+               "-save", str(DST / "intcode.ps3")):
+            ok += 1
+        else:
+            fail += 1
+            print("  [失败] intcode.ps3")
+
     print(f"\n[1/4] 加密脚本: 成功 {ok} 失败 {fail} → {DST}")
     print(f"      文件数 {len(list(DST.glob('*.ps3')))}")
 

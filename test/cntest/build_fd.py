@@ -89,7 +89,14 @@ def patch_start_ps3(tmp: Path) -> bool:
         return False
     d = bytearray(plain.read_bytes())
 
-    for old, new in PATH_PAIRS:
+    # 和 build_full 一样：没有 data\pack\chip 目录时不要把路径改成散装形式，
+    # 否则引擎找不到文件会一路弹「ファイルをオープンできませんでした」。
+    pairs = PATH_PAIRS
+    if not (GAME / "data" / "pack" / "chip").is_dir():
+        pairs = [p for p in PATH_PAIRS if b"chip" not in p[0]]
+        print("    没有 data/pack/chip 目录：chip.cpz 保持原样（界面图为日文原版）")
+
+    for old, new in pairs:
         if len(new) > len(old):
             raise SystemExit(f"路径 {new!r} 比 {old!r} 长，会撑坏字符串表")
         pad = b"\x00" * (len(old) - len(new))
