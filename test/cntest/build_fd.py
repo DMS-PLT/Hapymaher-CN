@@ -148,6 +148,8 @@ def main() -> int:
 
     ok = fail = 0
     for i, s in enumerate(scripts, 1):
+        if s == "intcode.ps3":
+            continue          # 没有文本，下面单独原样加密（与 build_full.py 一致）
         if build_encrypted(s, TMP):
             ok += 1
         else:
