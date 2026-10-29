@@ -95,6 +95,13 @@ def build_encrypted(script: str, tmp: Path) -> bool:
 
 def patch_start_ps3(tmp: Path) -> bool:
     plain = tmp / "start.plain"
+    # 原版 start.ps3 属于游戏文件，不随仓库分发（版权）。第一次构建前自备一份：
+    #   从游戏安装包 / 镜像里取 data\pack\start.ps3，放到 test\backup\start.ps3.orig
+    if not START_ORIG.exists():
+        print(f"    !! 缺少原版 {START_ORIG}")
+        print("       请从正版游戏的 data\\pack\\start.ps3 复制一份到上面这个路径")
+        print("       （补丁只改路径表和标题，必须基于原版重建，不能拿改过的文件当输入）")
+        return False
     if not run(CRYPTOR, "-mode", "decode", "-ps3", str(START_ORIG), "-save", str(plain)):
         return False
     d = bytearray(plain.read_bytes())

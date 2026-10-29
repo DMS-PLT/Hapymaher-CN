@@ -99,6 +99,11 @@ def build_one(key: str) -> int:
             shutil.copy2(f, pkg / "data" / "pack" / "chip" / f.name)
 
     # 5. 卸载还原用的原版 start.ps3 + 读我
+    #    原版文件是游戏资源，不进仓库；第一次出包前自备（见 build_full.py 里的说明）
+    if not g["orig_start"].exists():
+        print(f"  !! 缺少原版 {g['orig_start']}，无法生成「还原用/start.ps3」")
+        print("     从正版游戏的 data\\pack\\start.ps3 复制一份到该路径后再跑")
+        return 1
     restore = pkg / "还原用"
     restore.mkdir()
     shutil.copy2(g["orig_start"], restore / "start.ps3")

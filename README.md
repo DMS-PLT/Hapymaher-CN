@@ -50,7 +50,17 @@ Purple software《ハピメア RE.ver》与《ハピメア Fragmentation Dream R
 ## 从零复现
 
 需要：Windows + VS 2022（含 C++ 与 Windows SDK）、Python 3.10+、正版游戏、
-[RxCMVS](https://github.com/ZQF-ReVN/RxCMVS) 的工具（`PS3_Cryptor.exe` / `PS3_TextEditor.exe`）。
+[RxCMVS](https://github.com/ZQF-ReVN/RxCMVS) 的工具（`PS3_Cryptor.exe` / `PS3_TextEditor.exe`，
+放到 `tools/RxCMVS/`）。
+
+**仓库不含任何游戏文件**（版权原因）。第一次构建前，从游戏里复制两份原版 `start.ps3`：
+
+```
+<游戏>\data\pack\start.ps3  ->  test\backup\start.ps3.orig        （本体）
+<FD>\data\pack\start.ps3    ->  test\backup\fd_start.ps3.orig     （FD）
+```
+
+它们是构建的输入（补丁要基于原版重新写路径表和标题），也是发布包里「还原用」的来源。
 
 ```bash
 # 1. 解密脚本 -> 导出原文

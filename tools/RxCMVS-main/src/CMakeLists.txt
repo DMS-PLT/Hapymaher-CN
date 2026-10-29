@@ -1,5 +1,0 @@
-add_subdirectory("MGV_Editor")
-add_subdirectory("PS3_TextEditor")
-add_subdirectory("PS3_Cryptor")
-add_subdirectory("VFS_Hook")
-add_subdirectory("VFS_Extract")
