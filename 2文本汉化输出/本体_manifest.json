@@ -1,7 +1,7 @@
 {
   "version": 1,
   "game": "hapymaher",
-  "source_dir": "C:\\Users\\DMS\\Desktop\\Hapymaher\\output\\hapymaher",
+  "source_dir": "output/hapymaher",
   "strip_chars": "　 \t\r\n",
   "files": {
     "autodemo.ps3.json": {

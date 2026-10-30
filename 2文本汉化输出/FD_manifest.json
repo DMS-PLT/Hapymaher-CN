@@ -1,7 +1,7 @@
 {
   "version": 1,
   "game": "fragmentation-dream",
-  "source_dir": "C:\\Users\\DMS\\Desktop\\Hapymaher\\output\\fragmentation-dream",
+  "source_dir": "output/fragmentation-dream",
   "strip_chars": "　 \t\r\n",
   "files": {
     "dselect0.ps3.json": {
