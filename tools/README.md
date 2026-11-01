@@ -25,10 +25,10 @@
 | 导出工具 | `tools/RxCMVS/PS3_TextEditor.exe` |
 | 已解密的脚本 | `ハピメア脚本/code/`（158 个）、`ハピメア Fragmentation Dream脚本/code/`（124 个） |
 
-脚本开头有三个常量写死了路径，换机器要改：
+路径不用改：脚本从自身位置反推项目根目录（`ROOT = Path(__file__).resolve().parent.parent`），
+放哪个盘、哪个目录都能跑。其余常量形如：
 
 ```python
-ROOT   = Path(r"C:\Users\DMS\Desktop\Hapymaher")
 TOOL   = ROOT / "tools" / "RxCMVS" / "PS3_TextEditor.exe"
 TARGETS = { "hapymaher": ROOT / "ハピメア脚本" / "code",
             "fragmentation-dream": ROOT / "ハピメア Fragmentation Dream脚本" / "code" }

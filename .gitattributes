@@ -22,3 +22,10 @@
 
 # 译文 JSON：内容按 UTF-8 存，比较时别做换行归一化之外的转换
 *.json  text eol=lf
+
+# 备份/还原点是逐字节参照物（restore_game.py 靠 MD5 判断能不能还原），
+# 这里一个字节都不许动——即使是 *.cfg 这类「像文本」的文件。
+# 本仓库不跟踪 test/backup/（README 让用户自备游戏文件放进来），
+# 但用户本地 git init 后提交备份时会用到本文件，必须提前把规矩立好。
+test/backup/** -text
+*.cfg.orig -text

@@ -65,17 +65,21 @@ Purple software《ハピメア RE.ver》与《ハピメア Fragmentation Dream R
 **第一步：解包脚本**（唯一需要手动的一步）
 
 我们的仓库不含 cpz 解包工具（`GARbro` 是 MIT，但只发布 GUI 版）。用 [GARbro](https://github.com/morkt/GARbro/releases)
-打开 `<游戏>\data\pack\script.cpz`，全选后提取到一个临时目录。解出来的 `.ps3` 是加密的，
-用脚本批量解密：
+打开 `<游戏>\data\pack\script.cpz`，全选后提取到一个临时目录，然后交给整理脚本：
 
 ```bash
 python tools/prepare_scripts.py <解包目录> --game 本体   # FD 用 --game fd
 ```
 
-解密结果会放进 `ハピメア脚本/code`（FD 是 `ハピメア Fragmentation Dream脚本/code`）。
+> ⚠ **本作 script.cpz 解出来的 `.ps3` 大多是明文，不需要解密**（实测对明文跑解密：
+> 多数直接崩溃，少数「成功」但内容已毁）。`prepare_scripts.py` 会逐个自动探测：
+> 能直接导出对白的原样拷贝，导不出的才解密并验证，验证不过按失败处理。
+> 老教程里「解出来都是加密的，先批量解密」的说法是错的，别照做。
+
+整理结果会放进 `ハピメア脚本/code`（FD 是 `ハピメア Fragmentation Dream脚本/code`）。
 
 ```bash
-# 1. 解密脚本 -> 导出原文
+# 1. 整理脚本 -> 导出原文（自检判据：条目数 本体 64,888 / FD 42,254，失败 0）
 python tools/export_scripts.py
 
 # 2. 注入译文 + 构建进游戏目录
