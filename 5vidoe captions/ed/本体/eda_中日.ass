@@ -1,0 +1,44 @@
+﻿[Script Info]
+; 中日双语 ED 字幕 —— 日文右上 / 中文左下
+ScriptType: v4.00+
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+YCbCr Matrix: TV.709
+PlayResX: 1920
+PlayResY: 1080
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: JP,TW-Kai,48,&H00FFFFFF,&H00FFFFFF,&H00120C10,&H64000000,0,0,0,0,100,100,2.0,0,1,2.4,1.4,9,84,40,54,1
+Style: CN,TW-Kai,48,&H00FCF8FF,&H00FCF8FF,&H00120C10,&H64000000,0,0,0,0,100,100,1.8,0,1,2.4,1.4,1,74,40,62,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:17.98,0:00:28.65,JP,,0,0,0,,頬伝う涙 目の前に広がる
+Dialogue: 1,0:00:17.98,0:00:28.65,CN,,0,0,0,,泪水滑落脸颊 展现在眼前的
+Dialogue: 0,0:00:28.65,0:00:38.65,JP,,0,0,0,,あなたの笑顔と柔らかな髪
+Dialogue: 1,0:00:28.65,0:00:38.65,CN,,0,0,0,,是你的笑靥 与柔顺的发丝
+Dialogue: 0,0:00:39.93,0:00:50.82,JP,,0,0,0,,まとわりつく淫靡な誘惑 目をそらす
+Dialogue: 1,0:00:39.93,0:00:50.82,CN,,0,0,0,,纠缠周身的淫靡诱惑 避开目光
+Dialogue: 0,0:00:50.82,0:01:00.98,JP,,0,0,0,,先には胸で光る あやしい瞳
+Dialogue: 1,0:00:50.82,0:01:00.98,CN,,0,0,0,,视线所及处 却是在胸前闪烁的妖异双眸
+Dialogue: 0,0:01:01.80,0:01:07.31,JP,,0,0,0,,全てを委ねて
+Dialogue: 1,0:01:01.80,0:01:07.31,CN,,0,0,0,,将所有的一切尽数托付
+Dialogue: 0,0:01:07.31,0:01:12.31,JP,,0,0,0,,ひとつになりたい
+Dialogue: 1,0:01:07.31,0:01:12.31,CN,,0,0,0,,愿与你融为一体
+Dialogue: 0,0:01:12.81,0:01:18.24,JP,,0,0,0,,朝から夜まで
+Dialogue: 1,0:01:12.81,0:01:18.24,CN,,0,0,0,,从破晓直至长夜
+Dialogue: 0,0:01:18.24,0:01:23.31,JP,,0,0,0,,二人きりのまどろみ
+Dialogue: 1,0:01:18.24,0:01:23.31,CN,,0,0,0,,独属于你我二人的缱绻浅眠
+Dialogue: 0,0:01:24.52,0:01:30.31,JP,,0,0,0,,この夢 夢 背徳的
+Dialogue: 1,0:01:24.52,0:01:30.31,CN,,0,0,0,,这场梦 这一场梦 如此背德
+Dialogue: 0,0:01:30.31,0:01:34.17,JP,,0,0,0,,君だけ閉じ込めたい
+Dialogue: 1,0:01:30.31,0:01:34.17,CN,,0,0,0,,唯想将你一人深锁于此
+Dialogue: 0,0:01:34.17,0:01:37.98,JP,,0,0,0,,いつかきっとわかるはずよ
+Dialogue: 1,0:01:34.17,0:01:37.98,CN,,0,0,0,,终有一日 你定然能够明了
+Dialogue: 0,0:01:37.98,0:01:45.26,JP,,0,0,0,,ずっと ずっと また過ごしたい あなたと
+Dialogue: 1,0:01:37.98,0:01:45.26,CN,,0,0,0,,好想永远 永远 再次与你相伴相守
+Dialogue: 0,0:01:45.26,0:01:49.31,JP,,0,0,0,,永久のワルツ踊り続け
+Dialogue: 1,0:01:45.26,0:01:49.31,CN,,0,0,0,,跳着永恒的圆舞曲 永不停歇
+Dialogue: 0,0:01:49.31,0:01:52.65,JP,,0,0,0,,溶け合いましょう
+Dialogue: 1,0:01:49.31,0:01:52.65,CN,,0,0,0,,就让我们 彻底相融吧

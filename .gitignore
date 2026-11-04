@@ -13,6 +13,20 @@
 
 # ── 回收目录 ──
 /.trash/
+/5vidoe captions/.trash/
+
+# ── 视频素材（体积大，可由 mgv 重新生成）──
+# 4vidoe：原始 mgv 副本 + 解出的 ogv/ogg + 对轴用 mkv，全部可从游戏重新做过
+/4vidoe/
+# 5vidoe captions：成片、基底视频、字体与校对截图不入库；字幕工程（ass/py）入库
+/5vidoe captions/**/*.mkv
+/5vidoe captions/**/*.mp4
+/5vidoe captions/**/*.ogv
+/5vidoe captions/*.ttf
+/5vidoe captions/*.ttc
+/5vidoe captions/**/_check/
+# 视频回写前的游戏原文件备份（约 875M，游戏文件，不入库）
+/test/backup/video/
 
 # ── 第三方工具（整棵树，体积大且不是本项目产出）──
 /1文本汉化/1-GPPGUI/
