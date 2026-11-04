@@ -59,7 +59,7 @@ Purple software《ハピメア RE.ver》与《ハピメア Fragmentation Dream R
 | `3UI源文件/` | 界面图源（PSD / PNG / pb3），体积大，未纳入版本管理 |
 | `5vidoe captions/` | OP/ED 字幕工程（`.ass` + Python 渲染脚本）；成片、基底视频与字体不入库 |
 | `4vidoe/` | 视频解包工作区（`<游戏>/video/` 存 mgv 与 ogv/ogg，`<游戏>/合并视频/` 存对轴用 mkv），可由游戏重新生成，不入库 |
-| `4vidoe-目录结构.md` | `4vidoe/` 的完整文件树与各目录用途 |
+| `4vidoe/README.md` | `4vidoe/` 的完整文件树与各目录用途（素材本身不入库） |
 | `汉化实施交接文档.md` | 完整技术记录 |
 | `视频解包与字幕时间轴报告.md` | 视频链路：`mgv` 结构、时间轴真相、回写与校验 |
 
