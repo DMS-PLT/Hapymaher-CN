@@ -52,7 +52,7 @@ Purple software《ハピメア RE.ver》与《ハピメア Fragmentation Dream R
 | 路径 | 内容 |
 |---|---|
 | `tools/` | 构建工具：导出、切槽/回填、pb3 编解码、一键构建、出包 |
-| `test/hooklog/` | 补丁 DLL（`cnpatch.cpp`）、启动器（`launch.cpp`）、构建脚本 |
+| `test/hooklog/` | 补丁 DLL（`cnpatch.cpp`）、启动器（`launch.cpp`）、构建脚本、随包字体 `TW-Kai-98_1.ttf` |
 | `test/cntest/` | 真正的构建逻辑（`build_full.py` / `build_fd.py`） |
 | `2文本汉化输出/` | **译文工作副本**（`本体_gt_output` / `FD_gt_output` + 槽位 mapping） |
 | `1文本汉化/` | GalTranslPP 工程配置、字典（`Config.toml` 含密钥，不在此仓库） |
@@ -129,8 +129,8 @@ cd test/hooklog && build.bat
    并逐字节核对索引段/音频段。原始 mgv 自动备份到 `test/backup/video/`。
 
 **字体**：字幕脚本默认从 `5vidoe captions/` 读三款字体——
-`TW-Kai-98_1.ttf`（全字库正楷体，UI 汉化和特效字幕都用它；**成品主补丁包已随附**，
-本仓库因体积原因不带，构建时从全字库官网下载即可）、
+`TW-Kai-98_1.ttf`（全字库正楷体，UI 汉化和特效字幕都用它；**仓库里在
+`test/hooklog/TW-Kai-98_1.ttf`，成品主补丁包也已随附**）、
 `DFJinWenW3-GB.ttf` / `DFKinBun-W5.ttc`（华文金文体 W3 / DF 金文体 W5，
 **商业字体，成品包也不带**，需自行下载并取得授权）。缺字体时脚本会直接报 `找不到字体`。
 
