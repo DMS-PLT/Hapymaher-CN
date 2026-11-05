@@ -17,7 +17,13 @@ echo.
 echo   Log: cnpatch.log in the FD game folder
 echo ==================================================
 echo.
-"%~dp0launch.exe" fd
+set "TARGET=%~1"
+if not defined TARGET if exist "..\..\ハピメア Fragmentation Dream フルHD版\cmvs32.exe" set "TARGET=..\..\ハピメア Fragmentation Dream フルHD版\cmvs32.exe"
+if defined TARGET (
+  "%~dp0launch.exe" "%TARGET%"
+) else (
+  "%~dp0launch.exe" fd
+)
 echo.
 echo   Done. Log: cnpatch.log in the FD game folder
 pause

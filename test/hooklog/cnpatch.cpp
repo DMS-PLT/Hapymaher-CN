@@ -1288,9 +1288,21 @@ static int WINAPI my_EnumFontFamiliesExA(HDC hdc, LPLOGFONTA plf, FONTENUMPROCA 
 {
     if (!real_EnumFontFamiliesExA) return 0;
 
-    // 查特定字体（名字非空）：不过滤，交给原函数
-    if (plf && plf->lfFaceName[0])
+    // 查特定字体（名字非空）：引擎用它校验配置里保存的字体是否存在。
+    // 它固定带 lfCharSet=128(SJIS)，仿宋/楷体/隶书/幼圆在 SJIS 下查不到，
+    // 校验失败就会回退黑体 —— 表现为「重进游戏字体变回黑体」。
+    // 这里和全量枚举一样改用 DEFAULT_CHARSET 再查一次，名字仍原样保留。
+    if (plf && plf->lfFaceName[0]) {
+        if (g_enable_face && plf->lfCharSet == 128) {
+            LOGFONTA q = *plf;
+            q.lfCharSet = DEFAULT_CHARSET;
+            q.lfPitchAndFamily = 0;
+            logf("enum\t查字体 %s charset=%d -> 改用 DEFAULT_CHARSET\n",
+                 plf->lfFaceName, plf->lfCharSet);
+            return real_EnumFontFamiliesExA(hdc, &q, proc, lp, flags);
+        }
         return real_EnumFontFamiliesExA(hdc, plf, proc, lp, flags);
+    }
 
     // 引擎枚举时带了字符集过滤（实测 lfCharSet=128/SJIS）：系统只返回「支持该字符集」
     // 的字体，黑体/仿宋/楷体这类 GB2312 字体压根不会出现，白名单也就无从放行。
