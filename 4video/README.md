@@ -1,4 +1,4 @@
-# 4vidoe 目录结构
+# 4video 目录结构
 
 > 视频解包工作区。整个目录**不进版本库**（含游戏视频，约 2.7GB），
 > 可按《视频解包与字幕时间轴报告.md》从游戏重新生成。本文只记录结构与用途。
@@ -6,7 +6,7 @@
 ## 文件树
 
 ```text
-4vidoe/
+4video/
 ├─ 本体/
 │  ├─ video/                     原始 mgv + 解出的 ogv / ogg
 │  │  ├─ op.mgv   op.ogv   op.ogg
@@ -64,7 +64,7 @@
 
 ```bash
 # 1) 解包：先进入该视频所在目录，产物会落在当前目录
-cd "4vidoe/本体/video"
+cd "4video/本体/video"
 tools\RxCMVS\MGV_Editor.exe -mode extract -mgv op.mgv
 
 # 2) 按槽位表重建时间轴

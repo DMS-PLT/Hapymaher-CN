@@ -57,9 +57,9 @@ Purple software《ハピメア RE.ver》与《ハピメア Fragmentation Dream R
 | `2文本汉化输出/` | **译文工作副本**（`本体_gt_output` / `FD_gt_output` + 槽位 mapping） |
 | `1文本汉化/` | GalTranslPP 工程配置、字典（`Config.toml` 含密钥，不在此仓库） |
 | `3UI源文件/` | 界面图源（PSD / PNG / pb3），体积大，未纳入版本管理 |
-| `5vidoe captions/` | OP/ED 字幕工程（`.ass` + Python 渲染脚本）；成片、基底视频与字体不入库 |
-| `4vidoe/` | 视频解包工作区（`<游戏>/video/` 存 mgv 与 ogv/ogg，`<游戏>/合并视频/` 存对轴用 mkv），可由游戏重新生成，不入库 |
-| `4vidoe/README.md` | `4vidoe/` 的完整文件树与各目录用途（素材本身不入库） |
+| `5video captions/` | OP/ED 字幕工程（`.ass` + Python 渲染脚本）；成片、基底视频与字体不入库 |
+| `4video/` | 视频解包工作区（`<游戏>/video/` 存 mgv 与 ogv/ogg，`<游戏>/合并视频/` 存对轴用 mkv），可由游戏重新生成，不入库 |
+| `4video/README.md` | `4video/` 的完整文件树与各目录用途（素材本身不入库） |
 | `汉化实施交接文档.md` | 完整技术记录 |
 | `视频解包与字幕时间轴报告.md` | 视频链路：`mgv` 结构、时间轴真相、回写与校验 |
 
@@ -123,12 +123,12 @@ cd test/hooklog && build.bat
 2. **重建时间轴**：`python test/rebuild_mgv_video.py <x.mgv> <x.ogv> <x.ogg> <out.mkv>`。
    按 `mgv` 帧槽位表写时间戳，Aegisub 里视频/音频/字幕三者才对得上。
    **不要**用 ffmpeg 默认重封装或 `vfr`（会丢静止帧时长）。
-3. **渲染字幕**：进入 `5vidoe captions/<游戏>/字幕制作脚本包`，按各包 README 跑 `render.py`。
-   需要 Pillow + numpy；ED 包在 `5vidoe captions/ed/字幕制作脚本包`。
+3. **渲染字幕**：进入 `5video captions/<游戏>/字幕制作脚本包`，按各包 README 跑 `render.py`。
+   需要 Pillow + numpy；ED 包在 `5video captions/ed/字幕制作脚本包`。
 4. **回写**：`python test/pack_videos.py`。重编码 Theora → 校验帧数 → 替换 `mgv`，
    并逐字节核对索引段/音频段。原始 mgv 自动备份到 `test/backup/video/`。
 
-**字体**：字幕脚本默认从 `5vidoe captions/` 读三款字体——
+**字体**：字幕脚本默认从 `5video captions/` 读三款字体——
 `TW-Kai-98_1.ttf`（全字库正楷体，UI 汉化和特效字幕都用它；**仓库里在
 `test/hooklog/TW-Kai-98_1.ttf`，成品主补丁包也已随附**）、
 `DFJinWenW3-GB.ttf` / `DFKinBun-W5.ttc`（华文金文体 W3 / DF 金文体 W5，
@@ -157,5 +157,5 @@ cd test/hooklog && build.bat
 
 ## 授权
 
-- 代码（`tools/`、`test/`、`5vidoe captions/**/*.py`）: [MIT](LICENSE)
-- 译文与字幕文本（`2文本汉化输出/`、`5vidoe captions/**/*.ass`）: 保留署名、禁止商用，详见 [LICENSE](LICENSE)
+- 代码（`tools/`、`test/`、`5video captions/**/*.py`）: [MIT](LICENSE)
+- 译文与字幕文本（`2文本汉化输出/`、`5video captions/**/*.ass`）: 保留署名、禁止商用，详见 [LICENSE](LICENSE)

@@ -9,7 +9,7 @@ import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]  # 项目根（test 往上两级）
-CAP = ROOT / "5vidoe captions"
+CAP = ROOT / "5video captions"
 WORK = ROOT / "test" / "video_work"
 BACKUP = ROOT / "test" / "backup" / "video"
 MGV_EDITOR = ROOT / "tools" / "RxCMVS" / "MGV_Editor.exe"
