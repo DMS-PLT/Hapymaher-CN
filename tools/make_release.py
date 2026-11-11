@@ -35,7 +35,7 @@ GAMES = {
     "本体": {
         "game": ROOT / "ハピメア フルHD版",
         "exe": "launch_gui.exe",
-        "pkg": "ハピメア RE.ver 修图+gemini-4-argon翻译补丁v1.0",
+        "pkg": "ハピメア RE.ver 修图+gemini-4-argon翻译补丁v1.1",
         "cn": "cmvs32_cn.exe",
         # 卸载还原用的加密原版 start.ps3（构建时从它解密再打补丁的，逐字节就是装机原版）
         "orig_start": ROOT / "test" / "backup" / "start.ps3.orig",
@@ -44,7 +44,7 @@ GAMES = {
     "fd": {
         "game": ROOT / "ハピメア Fragmentation Dream フルHD版",
         "exe": "launch_gui_fd.exe",
-        "pkg": "ハピメア FD RE.ver 修图+gemini-4-argon翻译补丁v1.0",
+        "pkg": "ハピメア FD RE.ver 修图+gemini-4-argon翻译补丁v1.1",
         "cn": "cmvs32_cn_FD.exe",
         "orig_start": ROOT / "test" / "backup" / "fd_start.ps3.orig",
         "readme": "release_readme_fd.txt",

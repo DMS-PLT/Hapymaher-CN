@@ -4,7 +4,7 @@ Purple software《ハピメア RE.ver》与《ハピメア Fragmentation Dream R
 含全部正文译文、界面图、菜单与系统设置；另附 OP/ED 中日双语特效字幕视频包（单独分发）。
 
 - 翻译：gemini-4-argon
-- 版本：v1.0
+- 版本：v1.1
 - 作者：p端木森q
 
 > **本仓库不含游戏本体，也不含游戏的解密脚本与原文。**
