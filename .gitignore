@@ -39,6 +39,7 @@
 # gt_output 不在这里入库 —— 译文以 2文本汉化输出/ 为准（那里的副本才是工作副本）。
 /1文本汉化/*/GUI_Projects/*/gt_input/
 /1文本汉化/*/GUI_Projects/*/gt_output/
+# transl_cache 含游戏原文/译文缓存（版权内容）：只留在开发者本地仓库，绝不入库
 /1文本汉化/*/GUI_Projects/*/transl_cache/
 /1文本汉化/*/GUI_Projects/*/transl_cache_bak/
 /1文本汉化/*/GUI_Projects/*/other_cache/

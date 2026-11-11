@@ -55,7 +55,7 @@ Purple software《ハピメア RE.ver》与《ハピメア Fragmentation Dream R
 | `test/hooklog/` | 补丁 DLL（`cnpatch.cpp`）、启动器（`launch.cpp`）、构建脚本、随包字体 `TW-Kai-98_1.ttf` |
 | `test/cntest/` | 真正的构建逻辑（`build_full.py` / `build_fd.py`） |
 | `2文本汉化输出/` | **译文工作副本**（`本体_gt_output` / `FD_gt_output` + 槽位 mapping） |
-| `1文本汉化/` | GalTranslPP 工程配置、字典（`Config.toml` 含密钥，不在此仓库） |
+| `1文本汉化/` | GalTranslPP 工程配置、字典；`transl_cache` 含版权内容，只在开发者本地保留，不随本仓库分发（`Config.toml` 含密钥，也不在此仓库） |
 | `3UI源文件/` | 界面图源（PSD / PNG / pb3），体积大，未纳入版本管理 |
 | `5video captions/` | OP/ED 字幕工程（`.ass` + Python 渲染脚本）；成片、基底视频与字体不入库 |
 | `4video/` | 视频解包工作区（`<游戏>/video/` 存 mgv 与 ogv/ogg，`<游戏>/合并视频/` 存对轴用 mkv），可由游戏重新生成，不入库 |
