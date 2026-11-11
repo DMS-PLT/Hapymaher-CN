@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -49,8 +50,28 @@ PATH_PAIRS = [
 ]
 
 
+def normalize_spaces(t: str) -> str:
+    """去掉中文句末标点后的全角空格；保留『　　』占位符。"""
+    ph = []
+
+    def keep(m):
+        ph.append(m.group(0))
+        return f"\x00{len(ph) - 1}\x00"
+
+    t = re.sub(r"『[　]+』", keep, t)
+    t = re.sub(r"(?<=[A-Za-z0-9])　+(?=[A-Za-z0-9])", " ", t)
+    t = re.sub(r"(?<=[！？!?。…」』）】♪])[　]+", "", t)
+    t = re.sub(r"(?<=[一-鿿])[　]+(?=[！？!?。…、，,.;:：；”’\"」』）】])", "", t)
+    t = re.sub(r"(?<=[！？!?。…、，,.;:：；”’\"「『（【])[　]+(?=[一-鿿])", "", t)
+    t = re.sub(r"(?<=[一-鿿])　+(?=[一-鿿])", "", t)
+    t = t.strip("　")
+    for i, p in enumerate(ph):
+        t = t.replace(f"\x00{i}\x00", p)
+    return t
+
+
 def clean(t: str) -> str:
-    return (t.strip("　 \t\r\n")
+    return (normalize_spaces(t).strip(" \t\r\n")
              .replace("♪", NOTE_SENTINEL)
              .replace("・", "·"))
 
