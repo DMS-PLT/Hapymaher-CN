@@ -1,4 +1,4 @@
-ハピメア RE.ver 修图+gemini-4-argon翻译补丁v1.1
+ハピメア RE.ver 修图+gemini-4-argon翻译补丁v1.2
 by p端木森q 个人免费制作，仅供学习交流，禁止整合本体、转载贩卖
 
 
@@ -24,8 +24,8 @@ GalTransl：https://github.com/GalTransl/GalTransl 生成字典
 Angel-Nyanya：https://github.com/miaomiao0721/Angel-Nyanya 生成字典
 GARbro：https://github.com/morkt/GARbro/releases 解包
 RxCMVS：https://github.com/ZQF-ReVN/RxCMVS .ps3 读写
-全字库正楷体（TW-Kai）：https://www.cns11643.gov.tw/  https://data.gov.tw/dataset/5961 UI汉化字体（已随包收录）
-华文金文体W3：UI汉化字体（商业字体，本包不附带）
+全字库正楷体（TW-Kai）：https://www.cns11643.gov.tw/  https://data.gov.tw/dataset/5961 UI汉化字体
+华文金文体W3：UI汉化字体
 
 
 本项目GitHub地址：https://github.com/DMS-PLT/Hapymaher-CN
@@ -37,3 +37,7 @@ RxCMVS：https://github.com/ZQF-ReVN/RxCMVS .ps3 读写
 处理了字典误用导致的翻译问题
 优化了几段翻译
 处理了大模型导致的“敬谢不敏”成语滥用
+
+11月24日更新(v1.2)
+一个小更新，咲线第8话和另一个角色的第8话的标题图片用反了（非常抱歉）
+目前玩到本篇的咲线，玩的很慢，等全部玩完应该还会有一次小更新，基本不会有太大的变化请放心游玩
